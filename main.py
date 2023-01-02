@@ -18,45 +18,6 @@ def start_command(update: Update, context: CallbackContext):
         """)
 
 
-def help_command(update: Update, context: CallbackContext):
-    update.message.reply_text(
-        """
-        Available Commands :
-        /youtube - To get the youtube URL
-        /linkedin - To get the LinkedIn profile URL
-        /gmail - To get gmail URL
-        /geeks - To get the GeeksforGeeks URL
-        """)
-
-
-def gmail_url_command(update: Update, context: CallbackContext):
-    update.message.reply_text(
-        """
-        Your gmail link here (I am not giving mine one for security reasons)
-        """)
-
-
-def youtube_url_command(update: Update, context: CallbackContext):
-    update.message.reply_text(
-        """
-        Youtube Link => https://www.youtube.com/
-        """)
-
-
-def linkedin_url_command(update: Update, context: CallbackContext):
-    update.message.reply_text(
-        """
-        LinkedIn URL => https://www.linkedin.com/in/dwaipayan-bandyopadhyay-007a/
-        """)
-
-
-def geeks_url_command(update: Update, context: CallbackContext):
-    update.message.reply_text(
-        """
-        GeeksforGeeks URL => https://www.geeksforgeeks.org/
-        """)
-
-
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text(
         f"""Sorry '{update.message.text}' is not a valid command""")
@@ -80,11 +41,6 @@ def main():
     dp = updater.dispatcher
 
     # dp.add_handler(CommandHandler('start', start_command))
-    # dp.add_handler(CommandHandler('help', help_command))
-    # dp.add_handler(CommandHandler('youtube', youtube_url_command))
-    # dp.add_handler(CommandHandler('linkedin', linkedin_url_command))
-    # dp.add_handler(CommandHandler('gmail', gmail_url_command))
-    # dp.add_handler(CommandHandler('geeks', geeks_url_command))
 
     # dp.add_handler(MessageHandler(Filters.command, unknown))  # Filters out unknown commands
     dp.add_handler(MessageHandler(Filters.text, handle_message))
@@ -95,4 +51,5 @@ def main():
     updater.idle()
 
 
-main()
+if __name__ == "__main__":
+    main()
